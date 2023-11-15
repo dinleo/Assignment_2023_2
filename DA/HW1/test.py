@@ -1,5 +1,11 @@
-import MeCab
+import random
 
-m = MeCab.Tagger()
-t = m.parse('안녕하세요 저는 김김입니다')
-print(t)
+a = [0 for _ in range(10000)]
+
+for n in range(10000):
+    for i in range(len(a)):
+        a[i] += (2*random.randint(0,1) - 1)
+
+    if(n % 100 == 0):
+        print(n)
+print(sum(a)/10000)
